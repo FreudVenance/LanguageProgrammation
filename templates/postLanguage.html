@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container h1 {
+            color: #FFD700;
+            /* Doré */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #D3D3D3;
+            /* Gris clair */
+        }
+
+        .form-control {
+            background-color: #444444;
+            color: #f5f5f5;
+            border: 1px solid #555555;
+        }
+
+        .form-control:focus {
+            border-color: #FFD700;
+            /* Doré sur focus */
+            box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+        }
+
+        .btn-custom {
+            background-color: #FFD700;
+            /* Doré */
+            color: #121212;
+            border-radius: 5px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .btn-custom:hover {
+            background-color: #e6c200;
+            /* Doré foncé */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+    <body>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <h1>Ajouter un Langage de Programmation</h1>
+                        <form action="/language/post" method="post">
+                            <div class="form-group">
+                                <label for="NAME" class="form-label">Language's name</label>
+                                <input type="text" class="form-control" id="NAME" name="NAME" placeholder="Nom du Langage"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="AUTHOR_NAME" class="form-label">Language's Author</label>
+                                <input type="text" class="form-control" id="AUTHOR_NAME" name="AUTHOR_NAME"
+                                    placeholder="Nom de l'Auteur" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="AUTHOR_PROFILE" class="form-label">Language's Profil</label>
+                                <input type="text" class="form-control" id="AUTHOR_PROFILE" name="AUTHOR_PROFILE"
+                                    placeholder="Profil de l'Auteur" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="LOGO" class="form-label">Logo (URL)</label>
+                                <input type="url" class="form-control" id="LOGO" name="LOGO" placeholder="URL du Logo"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-custom mt-4">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

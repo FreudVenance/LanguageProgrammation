@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #2c2c2c;
+        /* Fond sombre */
+        color: #d4af37;
+        /* Texte doré */
+    }
+
+    .container {
+        background-color: #333;
+        /* Fond gris foncé pour le formulaire */
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .form-control {
+        background-color: #444;
+        /* Champs de saisie gris foncé */
+        color: #fff;
+        /* Texte blanc dans les champs */
+        border-color: #d4af37;
+        /* Bordure dorée */
+    }
+
+    .form-control:focus {
+        border-color: #d4af37;
+        /* Bordure dorée au focus */
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.8);
+    }
+
+    .btn-custom {
+        background-color: #d4af37;
+        /* Fond doré du bouton */
+        color: #333;
+        /* Texte sombre */
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .btn-custom:hover {
+        background-color: #b18c2a;
+        /* Changement de couleur au survol */
+    }
+
+    h1 {
+        color: #d4af37;
+        /* Titre doré */
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Ajouter un Framework</h1>
+        <form action="/language/post/framework/" method="post">
+            <div class="mb-3">
+                <label for="NAME" class="form-label">Nom du Framework</label>
+                <input type="text" class="form-control" id="NAME" name="NAME" required>
+            </div>
+            <div class="mb-3">
+                <label for="AUTHOR_NAME" class="form-label">Nom de l'Auteur</label>
+                <input type="text" class="form-control" id="AUTHOR_NAME" name="AUTHOR_NAME" required>
+            </div>
+            <div class="mb-3">
+                <label for="AUTHOR_PROFILE" class="form-label">Profil de l'Auteur</label>
+                <input type="text" class="form-control" id="AUTHOR_PROFILE" name="AUTHOR_PROFILE" required>
+            </div>
+            <div class="mb-3">
+                <label for="LOGO" class="form-label">Logo (URL)</label>
+                <input type="text" class="form-control" id="LOGO" name="LOGO" required>
+            </div>
+            <div class="mb-3">
+                <label for="PROGRAMMATION_LANGUAGE" class="form-label">Langage de Programmation</label>
+                <input type="text" class="form-control" id="PROGRAMMATION_LANGUAGE" name="PROGRAMMATION_LANGUAGE"
+                    required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">Ajouter Framework</button>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}

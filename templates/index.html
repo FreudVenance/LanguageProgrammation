@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="alert bg-dark border border-gray-700 shadow-lg p-4 text-white" role="alert">
+            <h1 class="display-4 text-warning">Bienvenue dans l'univers des languages de programmation!</h1>
+            <p class="lead text-gray-300">Découvrez les outils qui simplifient le développement d'applications web, de logiciels ect...</p>
+            <hr class="border-gray-600">
+            <p class="text-gray-400">Choisissez le langage de programmation ou le framework qui correspond le mieux à vos besoins et optimisez vos projets.</p>
+            <a href="#" class="btn btn-outline-warning border-2 text-warning">Voir les languages de programmation</a>
+            <a href="#" class="btn btn-outline-warning border-2 text-warning">Voir les frameworks</a>
+        </div>
+    </div>
+
+    <div id="bg-light">
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Frameworks Python Populaires</h2>
+            <div class="row">
+                <div class="container mt-5">
+                    <h1 class="text-center text-warning">Langages de Programmation</h1>
+                    <div class="row mt-4">
+                        {% for LANGUAGE in LANGUAGES %}
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="{{ LANGUAGE.LOGO }}" class="card-img-top" alt="{{ LANGUAGE.NAME }} Logo" style="height: 150px; object-fit: contain;">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">{{ LANGUAGE.NAME }}</h5>
+                                        <p class="card-text"><strong>Auteur:</strong> {{ LANGUAGE.AUTHOR_NAME }}</p>
+                                        <a href="{{ LANGUAGE.AUTHOR_PROFILE }}" class="btn btn-warning" target="_blank">Voir l'auteur</a>
+                                        <a href="{{ LANGUAGE.AUTHOR_PROFILE }}" class="btn btn-warning" target="_blank">Voir les frameworks</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
